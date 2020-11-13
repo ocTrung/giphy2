@@ -1,14 +1,12 @@
 <template>
   <div>
-    <h1>Giphy2</h1>
-    <router-link :to="{ name: 'gif-show', params: { id: '1' } }">Gif 1</router-link>
-
+    <h1>Showing gif {{ id }}</h1>
   </div>
 </template>
 
 <script>
   export default {
-    
+    props: ['id']
   }
 </script>
 
