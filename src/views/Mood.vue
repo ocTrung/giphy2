@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1></h1>
+    <h1>#mood</h1>
     <span>
           <GifCard v-for="gif in gifs" :key="gif.id" :gif="gif"/>
     </span>

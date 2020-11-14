@@ -17,7 +17,7 @@
       }
     },
     created() {
-      GifService.getGif(this.id)
+      GifService.getRandom(this.id)
         .then(response => {
           this.gif = response.data.data
         })
