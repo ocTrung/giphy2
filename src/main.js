@@ -8,6 +8,9 @@ Vue.component("GifCard", GifCard)
 
 Vue.config.productionTip = false;
 
+var infiniteScroll =  require('vue-infinite-scroll');
+Vue.use(infiniteScroll)
+
 new Vue({
   router,
   store,
