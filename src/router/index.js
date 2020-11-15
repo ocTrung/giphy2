@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import GifShow from "../views/GifShow.vue";
 import Random from '../views/Random.vue';
 import Mood from '../views/Mood.vue';
+import SearchResult from '../views/SearchResult.vue';
 
 Vue.use(VueRouter);
 
@@ -31,6 +32,12 @@ const routes = [
     component: Mood,
     props: true
   },
+  {
+    path: "/search/:query",
+    name: "SearchResult",
+    component: SearchResult,
+    props: true
+  }
 
 ];
 
