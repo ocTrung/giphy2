@@ -21,5 +21,8 @@ export default {
   },
   getGif(id) {
     return apiClient.get('/' + id + '?api_key=' + apiKey + '&limit=' + limit)
+  },
+  search(query) {
+    return apiClient.get('/search?q=' + query + '&api_key=' + apiKey + '&limit=' + limit)
   }
 }

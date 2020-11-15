@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import GifShow from "../views/GifShow.vue";
 import Random from '../views/Random.vue';
+import Mood from '../views/Mood.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,12 @@ const routes = [
     path: "/random",
     name: "Random",
     component: Random,
+    props: true
+  },
+  {
+    path: "/mood",
+    name: "Mood",
+    component: Mood,
     props: true
   },
 

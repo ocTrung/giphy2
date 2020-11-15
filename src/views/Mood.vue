@@ -1,8 +1,15 @@
 <template>
   <div>
-    <h1>#mood</h1>
     <span>
-          <GifCard v-for="gif in gifs" :key="gif.id" :gif="gif"/>
+      <button v-on:click="loadHappy">Happy</button>
+      <button v-on:click="loadPowerful">Powerful</button>
+      <button v-on:click="loadPeaceful">Peaceful</button>
+      <button v-on:click="loadSad">Sad</button>
+      <button v-on:click="loadMad">Mad</button>
+      <button v-on:click="loadScared">Scared</button>
+
+      <GifCard v-for="gif in gifs" :key="gif.id" :gif="gif"/>
+
     </span>
   
   </div>
@@ -21,15 +28,64 @@
         gifs: []
       }
     },
-    created() {
-      GifService.getTrending()
+    methods: {
+      loadHappy: function() {
+        GifService.search("happy")
         .then(response => {
-          this.gifs = response.data.data;
+        this.gifs = response.data.data;
         })
         .catch(error => {
           console.log("There was an error:" + error.response)
         })
-    }
+      },
+      loadPowerful: function() {
+        GifService.search("powerful")
+        .then(response => {
+        this.gifs = response.data.data;
+        })
+        .catch(error => {
+          console.log("There was an error:" + error.response)
+        })
+      },
+      loadPeaceful: function() {
+        GifService.search("peaceful")
+        .then(response => {
+        this.gifs = response.data.data;
+        })
+        .catch(error => {
+          console.log("There was an error:" + error.response)
+        })
+      },
+      loadSad: function() {
+        GifService.search("sad")
+        .then(response => {
+        this.gifs = response.data.data;
+        })
+        .catch(error => {
+          console.log("There was an error:" + error.response)
+        })
+      },
+      loadMad: function() {
+        GifService.search("mad")
+        .then(response => {
+        this.gifs = response.data.data;
+        })
+        .catch(error => {
+          console.log("There was an error:" + error.response)
+        })
+      },
+      loadScared: function() {
+        GifService.search("scared")
+        .then(response => {
+        this.gifs = response.data.data;
+        })
+        .catch(error => {
+          console.log("There was an error:" + error.response)
+        })
+      },
+
+    },
+
   }
 </script>
 
