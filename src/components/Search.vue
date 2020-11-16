@@ -49,10 +49,14 @@ input {
   font-size: 16px;
   background-color: white;
   transition: width 0.4s ease-in-out;
+  border-radius: 25px;
+
 }
 button {
   height: 34px;
   width: 50px;
   text-align: center;
+  border-radius: 25px;
+
 }
 </style>

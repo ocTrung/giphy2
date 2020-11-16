@@ -1,17 +1,16 @@
 <template>
   <div>
-    <span>
-      <button v-on:click="loadHappy">Happy</button>
-      <button v-on:click="loadPowerful">Powerful</button>
-      <button v-on:click="loadPeaceful">Peaceful</button>
-      <button v-on:click="loadSad">Sad</button>
-      <button v-on:click="loadMad">Mad</button>
-      <button v-on:click="loadScared">Scared</button>
+    <div class="moods">
+      <button class="button happy" v-on:click="loadHappy">Happy 😄</button>
+      <button class="button peaceful" v-on:click="loadPeaceful">Peaceful 🤝</button>
+      <button class="button sad" v-on:click="loadSad">Sad 😭</button>
+      <button class="button mad" v-on:click="loadMad">Mad 😡</button>
+      <button class="button scared" v-on:click="loadScared">Scared 😱</button>
+      <button class="button bored" v-on:click="loadBored">Bored 😑</button>
+    </div>
 
       <GifCard v-for="gif in gifs" :key="gif.id" :gif="gif"/>
 
-    </span>
-  
   </div>
 </template>
 
@@ -38,8 +37,8 @@
           console.log("There was an error:" + error.response)
         })
       },
-      loadPowerful: function() {
-        GifService.search("powerful")
+      loadPeaceful: function() {
+        GifService.search("peaceful")
         .then(response => {
         this.gifs = response.data.data;
         })
@@ -47,8 +46,8 @@
           console.log("There was an error:" + error.response)
         })
       },
-      loadPeaceful: function() {
-        GifService.search("peaceful")
+      loadBored: function() {
+        GifService.search("bored")
         .then(response => {
         this.gifs = response.data.data;
         })
@@ -89,6 +88,28 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
+.moods {
+  margin-bottom: 20px;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  /* cursor: pointer; */
+  border-radius: 25px;
 
+}
+
+.happy {background-color: #eba800; color: black;} /* Blue */
+.bored {background-color: #d74000;} /* Red */ 
+.peaceful {background-color: #1bd24e; color: black;} /* Gray */ 
+.sad {background-color: #3b3bdf;} /* Black */
+.mad {background-color: #bf0303;}
+.scared {background-color: #8500c7;}
 </style>
