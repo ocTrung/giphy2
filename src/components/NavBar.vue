@@ -1,17 +1,15 @@
 <template>
   <div>
-    <div id="nav" class="nav">
-      <router-link to="/">Giphy 2</router-link>
-
-      <nav>
-        <router-link :to="{ name: 'Home' }">Trending</router-link>
-      </nav>
+    <div id="nav">
+      <router-link to="/" class="brand">
+        <img class="logo" v-bind:src="logo" alt="Welcome to Giphy">
+      </router-link>
     </div>
 
     <div class="nav2">
-      <router-link :to="{ name: 'Home' }">#Trending</router-link> |  
-      <router-link :to="{ name: 'Random' }">#Random</router-link> |
-      <router-link :to="{ name: 'Mood' }">#Mood</router-link> 
+      <router-link :to="{ name: 'Home' }">Trending</router-link> |  
+      <router-link :to="{ name: 'Random' }">Random</router-link> |
+      <router-link :to="{ name: 'Mood' }">Mood</router-link> 
 
     </div>
 
@@ -19,8 +17,28 @@
 </template>
 
 <script>
+  import GifService from '@/services/GifService.js';
+
   export default {
-    
+    data() {
+      return {
+        logos: [],
+        logo: String
+      }
+    },
+    created() {
+      GifService.getLogo()
+        .then(response => {
+          this.logos = response.data.data
+          let index = Math.floor(Math.random() * 50)
+          this.logo = this.logos[index].images.original.url
+        })
+        .catch(error => {
+          console.log("There was an error:" + error.response)
+        })
+
+      console.log("random num: " + Math.floor(Math.random() * 20))
+    }
   }
 </script>
 
@@ -54,6 +72,12 @@
   font-size: 1.5em;
   color: #39b982;
   text-decoration: none;
+}
+.logo {
+  width: 200px;
+}
+a {
+  color: rgb(230, 207, 0);
 }
 
 </style>
