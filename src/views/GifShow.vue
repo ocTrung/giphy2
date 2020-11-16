@@ -1,7 +1,14 @@
 <template>
   <div>
-    <img :src=gif.images.original.url>
-    <h4>Title: {{ gif.title }} </h4>
+    <div>
+      <img :src=gif.images.original.url>
+    </div>
+    <div>
+      <h4>Title: {{ gif.title }} </h4>
+      <p>Short url: {{ gif.bitly_url }} </p>
+      <p>Embed url: {{ gif.embed_url }} </p>
+    
+    </div>
 
   </div>
 </template>
@@ -28,6 +35,11 @@
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="css" scoped>
+h4 {
+  color: white;
+}
+p {
+  color: white;
+}
 </style>
