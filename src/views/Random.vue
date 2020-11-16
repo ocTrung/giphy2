@@ -48,4 +48,7 @@
   .random {
   width: 25%;
   }
+  button {
+    margin-bottom: 20px;
+  }
 </style>

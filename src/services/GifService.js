@@ -26,6 +26,6 @@ export default {
     return apiClient.get('/search?q=' + query + '&api_key=' + apiKey + '&limit=' + limit + '&offset=' + offset)
   },
   getLogo() {
-    return apiClient.get('/search?q=' + 'Giphy' + '&api_key=' + apiKey + '&limit=' + 50)
+    return apiClient.get('/search?q=' + 'Giphy Logo' + '&api_key=' + apiKey + '&limit=' + 10)
   }
 }

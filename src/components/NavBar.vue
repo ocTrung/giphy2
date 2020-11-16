@@ -8,8 +8,9 @@
 
     <div class="nav2">
       <router-link :to="{ name: 'Home' }">Trending</router-link> |  
-      <router-link :to="{ name: 'Random' }">Random</router-link> |
-      <router-link :to="{ name: 'Mood' }">Mood</router-link> 
+      <router-link :to="{ name: 'Mood' }">Mood</router-link> |
+      <router-link :to="{ name: 'Random' }">Random</router-link>
+
 
     </div>
 
@@ -30,14 +31,12 @@
       GifService.getLogo()
         .then(response => {
           this.logos = response.data.data
-          let index = Math.floor(Math.random() * 50)
+          let index = Math.floor(Math.random() * 10)
           this.logo = this.logos[index].images.original.url
         })
         .catch(error => {
           console.log("There was an error:" + error.response)
         })
-
-      console.log("random num: " + Math.floor(Math.random() * 20))
     }
   }
 </script>
