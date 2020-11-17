@@ -1,10 +1,15 @@
 <template>
   <div>
-        <br>
-     <button v-on:click="randomButton">Another one!</button>
-    <br>
-    <img :src=gif.images.original.url>
-    <h4>Title: {{ gif.title }} </h4>
+     <button class="button" v-on:click="randomButton">Another one!</button>
+    <div>
+      <img :src=gif.images.original.url>
+    </div>
+    <div>
+      <h4>Title: {{ gif.title }} </h4>
+      <p>Short url: {{ gif.bitly_url }} </p>
+      <p>Embed url: {{ gif.embed_url }} </p>
+    
+    </div>
 
   </div>
 </template>
@@ -49,6 +54,25 @@
   width: 25%;
   }
   button {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
+  h4 {
+  color: white;
+  }
+  p {
+    color: white;
+  }
+  .button {
+  /* border: none; */
+  background-color: rgb(230, 17, 116);
+  padding: 15px 32px;
+  text-align: center;
+  /* text-decoration: none; */
+  display: inline-block;
+  font-size: 16px;
+  /* margin: 4px 2px; */
+  /* cursor: pointer; */
+  border-radius: 25px;
+  font-weight: bold;
+}
 </style>
