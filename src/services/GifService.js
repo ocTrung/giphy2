@@ -22,7 +22,10 @@ export default {
   getGif(id) {
     return apiClient.get('/' + id + '?api_key=' + apiKey + '&limit=' + limit)
   },
-  search(query) {
-    return apiClient.get('/search?q=' + query + '&api_key=' + apiKey + '&limit=' + limit)
+  search(query, offset) {
+    return apiClient.get('/search?q=' + query + '&api_key=' + apiKey + '&limit=' + limit + '&offset=' + offset)
+  },
+  getLogo() {
+    return apiClient.get('/search?q=' + 'Giphy Logo' + '&api_key=' + apiKey + '&limit=' + 10)
   }
 }

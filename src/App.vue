@@ -1,23 +1,26 @@
 <template>
   <div id="app">
     <NavBar />
-
+    <Search />
     <router-view />
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue';
-
+import Search from '@/components/Search.vue';
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    Search
   }
 }
 </script>
 
 <style>
+body {background-color: rgb(0, 0, 0);}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
